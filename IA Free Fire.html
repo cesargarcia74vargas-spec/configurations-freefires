@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/frefire2.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Free Fire</title>
+
+<style>
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    font-family:Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:500px;
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 0 20px cyan;
+}
+
+h1{
+    text-align:center;
+    color:#00e5ff;
+}
+
+h2{
+    color:#00e5ff;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    margin-top:15px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:20px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:white;
+}
+
+.resultado,.habilidades{
+    background:#0f172a;
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>IA FREE FIRE</h1>
+
+<input type="text" id="celular" placeholder="Ejemplo: Redmi Note 13">
+
+<button onclick="calcular()">Obtener Configuración</button>
+
+<div class="resultado" id="resultado">
+
+<h2>Sensibilidad Recomendada</h2>
+
+<p><b>DPI:</b> <span id="dpi"></span></p>
+<p><b>General:</b> <span id="general"></span></p>
+<p><b>Punto Rojo:</b> <span id="rojo"></span></p>
+<p><b>Mira 2X:</b> <span id="dosx"></span></p>
+<p><b>Mira 4X:</b> <span id="cuatrox"></span></p>
+<p><b>AWM:</b> <span id="awm"></span></p>
+<p><b>Cámara Libre:</b> <span id="camara"></span></p>
+
+</div>
+
+<div class="habilidades" id="habilidades">
+
+<h2>Combos de Habilidades</h2>
+
+<h3>Rush</h3>
+<p>⚡ Kairos + Jota + Kelly + Dasha</p>
+
+<h3>Heroico</h3>
+<p>🔥 Alok + Hayato + Jota + D-Bee</p>
+
+<h3>Escopeta</h3>
+<p>💥 Kairos + Jota + Dasha + Kelly</p>
+
+<h3>Francotirador</h3>
+<p>🎯 Moco + Laura + Rafael + D-Bee</p>
+
+<h3>Clasificatoria</h3>
+<p>🏆 Alok + Kelly + Hayato + Jota</p>
+
+</div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let celular = document.getElementById("celular").value.toLowerCase();
+
+let dpi = 500;
+let general = 95;
+let rojo = 90;
+let dosx = 82;
+let cuatrox = 70;
+let awm = 45;
+let camara = 100;
+
+
+// IA según el modelo
+
+if(celular.includes("redmi")){
+    dpi = 620;
+    general = 100;
+    rojo = 95;
+    dosx = 90;
+    cuatrox = 80;
+    awm = 55;
+}
+
+else if(celular.includes("poco")){
+    dpi = 640;
+    general = 100;
+    rojo = 97;
+    dosx = 92;
+    cuatrox = 82;
+    awm = 55;
+}
+
+else if(celular.includes("samsung")){
+    dpi = 580;
+    general = 100;
+    rojo = 93;
+    dosx = 88;
+    cuatrox = 76;
+    awm = 50;
+}
+
+else if(celular.includes("iphone")){
+    dpi = 520;
+    general = 98;
+    rojo = 92;
+    dosx = 85;
+    cuatrox = 72;
+    awm = 48;
+}
+
+else if(celular.includes("motorola")){
+    dpi = 560;
+    general = 100;
+    rojo = 92;
+    dosx = 86;
+    cuatrox = 75;
+    awm = 52;
+}
+
+document.getElementById("dpi").innerHTML = dpi;
+document.getElementById("general").innerHTML = general;
+document.getElementById("rojo").innerHTML = rojo;
+document.getElementById("dosx").innerHTML = dosx;
+document.getElementById("cuatrox").innerHTML = cuatrox;
+document.getElementById("awm").innerHTML = awm;
+document.getElementById("camara").innerHTML = camara;
+
+document.getElementById("resultado").style.display = "block";
+document.getElementById("habilidades").style.display = "block";
+
+}
+
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
